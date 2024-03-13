@@ -1,0 +1,102 @@
+[
+    {
+      "pregunta": "¿Cómo se llama el director de la escuela Hogwarts de Magia y Hechicería?",
+      "respuestas": ["Albus Dumbledore", "Severus Snape", "Minerva McGonagall"],
+      "respuesta_correcta": "Albus Dumbledore"
+    },
+    {
+      "pregunta": "¿Cuál es la casa a la que pertenece Harry Potter?",
+      "respuestas": ["Gryffindor", "Slytherin", "Ravenclaw"],
+      "respuesta_correcta": "Gryffindor"
+    },
+    {
+      "pregunta": "¿Quién es el mejor amigo de Harry Potter?",
+      "respuestas": ["Hermione Granger", "Ron Weasley", "Draco Malfoy"],
+      "respuesta_correcta": "Ron Weasley"
+    },
+    {
+      "pregunta": "¿Cómo se llama el director de la casa Slytherin?",
+      "respuestas": ["Severus Snape", "Salazar Slytherin", "Tom Riddle"],
+      "respuesta_correcta": "Severus Snape"
+    },
+    {
+      "pregunta": "¿Cuál es la mascota de Hagrid?",
+      "respuestas": ["Un hipogrifo llamado Buckbeak", "Un dragón chino", "Una araña gigante llamada Aragog"],
+      "respuesta_correcta": "Un hipogrifo llamado Buckbeak"
+    },
+    {
+      "pregunta": "¿Cuál es el hechizo que se utiliza para desarmar a un oponente?",
+      "respuestas": ["Expelliarmus", "Avada Kedavra", "Stupefy"],
+      "respuesta_correcta": "Expelliarmus"
+    },
+    {
+      "pregunta": "¿Quién mató a los padres de Harry Potter?",
+      "respuestas": ["Voldemort", "Lucius Malfoy", "Bellatrix Lestrange"],
+      "respuesta_correcta": "Voldemort"
+    },
+    {
+      "pregunta": "¿Cuál es el nombre del elfo doméstico que sirve a la familia Malfoy?",
+      "respuestas": ["Dobby", "Kreacher", "Winky"],
+      "respuesta_correcta": "Dobby"
+    },
+    {
+      "pregunta": "¿Quién es el fundador de la casa Ravenclaw?",
+      "respuestas": ["Rowena Ravenclaw", "Helga Hufflepuff", "Godric Gryffindor"],
+      "respuesta_correcta": "Rowena Ravenclaw"
+    },
+    {
+      "pregunta": "¿Qué criatura vive en el lago del Bosque Prohibido?",
+      "respuestas": ["El monstruo del lago", "El dragón acuático", "El kraken"],
+      "respuesta_correcta": "El monstruo del lago"
+    },
+    {
+      "pregunta": "¿Quién fue el primer amigo de Harry en el mundo mágico?",
+      "respuestas": ["Hagrid", "Ron Weasley", "Hermione Granger"],
+      "respuesta_correcta": "Hagrid"
+    },
+    {
+      "pregunta": "¿Cuál es la materia favorita de Hermione en Hogwarts?",
+      "respuestas": ["Pociones", "Transformaciones", "Encantamientos"],
+      "respuesta_correcta": "Transformaciones"
+    },
+    {
+      "pregunta": "¿Cómo se llama el hermano mayor de Ron Weasley?",
+      "respuestas": ["BillWeasley", "Charlie Weasley", "Percy Weasley"],
+      "respuesta_correcta": "Bill Weasley"
+      },
+      {
+      "pregunta": "¿Quién era conocido como el Príncipe Mestizo?",
+      "respuestas": ["Severus Snape", "Sirius Black", "Tom Riddle"],
+      "respuesta_correcta": "Severus Snape"
+      },
+      {
+      "pregunta": "¿Quién es el director de la casa Hufflepuff?",
+      "respuestas": ["Pomona Sprout", "Filius Flitwick", "Rolanda Hooch"],
+      "respuesta_correcta": "Pomona Sprout"
+      },
+      {
+      "pregunta": "¿Cuál es la última palabra del libro de la saga de Harry Potter?",
+      "respuestas": ["Siempre", "Fin", "Esperanza"],
+      "respuesta_correcta": "Siempre"
+      },
+      {
+      "pregunta": "¿Qué criatura se guarda en el Callejón Knockturn?",
+      "respuestas": ["El basilisco", "Los dementores", "Las acromántulas"],
+      "respuesta_correcta": "Los dementores"
+      },
+      {
+      "pregunta": "¿Cuál es el hechizo que invoca un patronus?",
+      "respuestas": ["Expecto Patronum", "Accio", "Lumos"],
+      "respuesta_correcta": "Expecto Patronum"
+      },
+      {
+      "pregunta": "¿Quién fue el primer estudiante en ser seleccionado para la casa Slytherin?",
+      "respuestas": ["Draco Malfoy", "Severus Snape", "Tom Riddle"],
+      "respuesta_correcta": "Tom Riddle"
+      },
+      {
+      "pregunta": "¿Qué animal era la patronus de Severus Snape?",
+      "respuestas": ["Un ciervo", "Un lobo", "Una nutria"],
+      "respuesta_correcta": "Una nutria"
+      }
+]

@@ -1,0 +1,96 @@
+/* Restablecimiento de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4; /* Un fondo más suave */
+}
+
+/* Encabezado */
+header {
+    background-color: #0077b7;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #004d73; /* Agrega un borde inferior para darle más profundidad */
+}
+
+h1 {
+    font-size: 2em; /* Usa em para hacerlo más responsivo */
+    margin-bottom: 10px; /* Agrega un margen inferior para darle más espacio al título */
+}
+
+img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; /* Agrega bordes redondeados a las imágenes */
+}
+
+/* Descripción del quiz */
+#descripcion {
+    padding: 20px;
+    background-color: #fff; /* Agrega un fondo blanco para resaltar el contenido */
+    margin: 20px; /* Agrega margen para separarlo del resto del contenido */
+    border-radius: 10px; /* Agrega bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Agrega una sombra para darle profundidad */
+}
+
+h2 {
+    font-size: 1.5em; /* Usa em para hacerlo más responsivo */
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Botón para iniciar el quiz */
+#iniciar {
+    text-align: center;
+    margin: 20px auto;
+}
+
+button {
+    background-color: #0077b7;
+    color: #fff;
+    font-size: 1em; /* Usa em para hacerlo más responsivo */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Agrega bordes redondeados al botón */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Agrega una sombra para darle profundidad */
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    /* Ajustar el tamaño de la imagen y el texto para dispositivos móviles */
+    img {
+      width: 150px;
+    }
+
+    h1 {
+      font-size: 1.5em; /* Usa em para hacerlo más responsivo */
+    }
+
+    h2 {
+      font-size: 1.2em; /* Usa em para hacerlo más responsivo */
+    }
+
+    p {
+      font-size: 0.875em; /* Usa em para hacerlo más responsivo */
+    }
+
+    button {
+      font-size: 0.875em; /* Usa em para hacerlo más responsivo */
+    }
+}
