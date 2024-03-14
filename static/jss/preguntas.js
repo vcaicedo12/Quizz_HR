@@ -13,6 +13,8 @@ fetch('static/json/questions.json')
     // Variable para controlar la pregunta actual.
     let preguntaActual = 0;
     let tiempoRestante = 30; // Tiempo inicial en segundos
+    let puntuacionTotal = 0; // Variable para almacenar la puntuación total.
+    
     // Función para mostrar la pregunta actual.
     function mostrarPregunta() {
       // Borrar el contenido del div #quiz.
@@ -70,7 +72,7 @@ fetch('static/json/questions.json')
             tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
             mostrarPregunta();
           } else {
-            // Si es la última pregunta, realizar alguna acción adicional.
+            window.location.href = '/resultado';
           }
         }
       }, 1000); // Actualizar el contador cada segundo
@@ -81,12 +83,17 @@ fetch('static/json/questions.json')
       siguienteBoton.addEventListener('click', () => {
         // Obtener todas las opciones de respuesta.
         const opciones = respuestasForm.querySelectorAll('input[type="radio"]');
-
+        let respuestaSeleccionadaCorrecta = false;
+        
         // Verificar si se ha seleccionado alguna opción.
         let seleccionado = false;
         opciones.forEach(opcion => {
           if (opcion.checked) {
             seleccionado = true;
+            // Verificar si la respuesta seleccionada es correcta.
+            if (opcion.id === `pregunta${preguntaActual}respuesta${pregunta.respuestaCorrecta}`) {
+              respuestaSeleccionadaCorrecta = true;
+            }
           }
         });
 
@@ -106,13 +113,22 @@ fetch('static/json/questions.json')
         }
         // Detener el temporizador cuando se hace clic en el botón.
         clearInterval(temporizador);
+        // Calcular los puntos para esta pregunta según el temporizador.
+        let puntos = 0;
+        if (tiempoRestante > 0 && respuestaSeleccionadaCorrecta) {
+          puntos = tiempoRestante; // Asignar los segundos restantes como puntos.
+        }
+        // Agregar los puntos al total.
+        puntuacionTotal += puntos;
         // Si no es la última pregunta, mostrar la siguiente.
         if (preguntaActual < preguntas.length - 1) {
           preguntaActual++;
           tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
           mostrarPregunta();
         } else {
-          // Si es la última pregunta, realizar alguna acción adicional.
+          // Realizar alguna acción adicional cuando se haya completado el cuestionario.
+          console.log('Puntuación Total:', puntuacionTotal); // Imprimir la puntuación total
+          window.location.href = '/resultado'; // Redirigir a la página de resultados
         }
       });
       preguntaDiv.appendChild(siguienteBoton);

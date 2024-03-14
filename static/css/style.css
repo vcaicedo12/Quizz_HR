@@ -9,59 +9,60 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.container {
+  }
+  
+  .container {
     text-align: center;
     max-width: 800px;
     margin: auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 15px;
-}
-
-h1, h2 {
+  }
+  
+  h1, h2 {
     color: #b62020;
-}
-
-p {
+  }
+  
+  p {
     color: #000000;
-}
-
-/* Estilos para el Header */
-header {
+  }
+  
+  /* Estilos para el Header */
+  header {
     display: flex;
     justify-content: center; /* Centra los elementos en el header */
     align-items: center;
-}
-header h1 {
+  }
+  
+  header h1 {
     text-align: center;
     position: relative;
     right: -30px;
-}
-
-header img {
+  }
+  
+  header img {
     height: 35px;
-    width: auto;
+    width: auto; /* Allow image to adjust width proportionally */
     position: relative;
     top: -30px; /* Mueve el logo 5px hacia arriba */
     right: -100px; /* Mueve el logo 5px a la derecha */
-}
-
-/* Estilos para el Main */
-main {
+  }
+  
+  /* Estilos para el Main */
+  main {
     margin-top: 20px;
-}
-
-.nombre-boton {
+  }
+  
+  .nombre-boton {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
-}
-
-button {
+  }
+  
+  button {
     background-color: #b62020;
     color: #ffffff;
     border: none;
@@ -71,8 +72,9 @@ button {
     font-weight: bold;
     border-radius: 5px;
     margin-top: 15px; /* Espacio adicional antes del botón */
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #d4af37;
-}
+  }
+  

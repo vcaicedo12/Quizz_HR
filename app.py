@@ -3,10 +3,6 @@ import json
 
 app = Flask(__name__)
 
-# Carga las preguntas del archivo JSON
-with open('static\json\questions.json', 'r') as f:
-    questions = json.load(f)
-
 # Ruta inicial
 @app.route('/')
 def index():
@@ -18,15 +14,10 @@ def game():
     return render_template('game.html')
     
 
-# Ruta para procesar la respuesta
-@app.route('/answer', methods=['POST'])
-def answer():
-    render_template ("index.html")
-
 # Ruta para el ranking
-@app.route('/ranking')
-def ranking():
-    render_template()
+@app.route('/resultado')
+def res():
+    return render_template('resultados.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
