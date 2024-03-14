@@ -15,11 +15,11 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #0077b7;
+    background-color:#333;
     color: #fff;
     padding: 20px;
     text-align: center;
-    border-bottom: 5px solid #004d73; /* Agrega un borde inferior para darle más profundidad */
+    border-bottom: 7px solid #333; /* Agrega un borde inferior para darle más profundidad */
 }
 
 h1 {
@@ -42,6 +42,7 @@ img {
     margin: 20px; /* Agrega margen para separarlo del resto del contenido */
     border-radius: 10px; /* Agrega bordes redondeados */
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Agrega una sombra para darle profundidad */
+    text-align: center;
 }
 
 h2 {
@@ -61,9 +62,9 @@ p {
 }
 
 button {
-    background-color: #0077b7;
+    background-color: #041d2a;
     color: #fff;
-    font-size: 1em; /* Usa em para hacerlo más responsivo */
+    font-size: 3em; /* Usa em para hacerlo más responsivo */
     padding: 10px 20px;
     border: none;
     cursor: pointer;

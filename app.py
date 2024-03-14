@@ -14,23 +14,9 @@ def index():
 
 @app.route('/game')
 def game():
-    global current_question  # Variable global para almacenar la pregunta actual
-    global score  # Variable global para almacenar la puntuación
+    
 
-    # Reiniciar variables si es un nuevo juego
-    if not current_question:
-        current_question = 0
-        score = 0
-
-    # Verificar si se han acabado las preguntas
-    if current_question == len(questions):
-        return redirect(url_for('final_screen'))  # Redirigir a la pantalla final
-
-    # Obtener la pregunta actual del arreglo de preguntas
-    question = questions[current_question]
-
-
-    return render_template('game.html', question=question)
+    return render_template('game.html')
     
 
 # Ruta para procesar la respuesta
