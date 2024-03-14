@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Gran Reto de Harry Potter</title>
-    <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tu nombre o equipo">
+  <meta name="description" content="Demuestra que eres un fan de Harry Potter con este quiz de 10 preguntas">
+  <title>El Gran Reto de Harry Potter</title>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>El Gran Reto de Harry Potter</h1>
-            <img src="static/img/Harry_Potter_logo.png" alt="Logo de Harry Potter">
-        </header>
-        <section id="descripcion">
-            <h2>¡Demuestra que eres un verdadero fan de Harry Potter!</h2>
-            <p>Este quiz de 10 preguntas te pondrá a prueba con los detalles más mágicos del Mundo Mágico.</p>
-            <p>¿Estás preparado para el desafío?</p>
-        </section>
-        <section id="iniciar">
-            <a href="/game"><button>¡Comenzar el Reto!</button></a>
-        </section>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Bienvenido a este Quiz</h1>
+      <img src="static/img/Harry_Potter_logo.png" alt="Logo de Harry Potter">
+    </header>
+    <main>
+      <section id="descripcion">
+        <h2>¡Demuestra que eres un verdadero fan de Harry Potter!</h2>
+        <p>Este quiz de 10 preguntas te pondrá a prueba con los detalles más mágicos del Mundo Mágico.</p>
+        <p>¿Estás preparado para el desafío?</p>
+      </section>
+      <form action="/game" method="get">
+        <div class="nombre-boton">
+          <label for="nombre">Ingresa tu nombre:</label>
+          <input type="text" id="nombre" name="nombre" >
+        </div>
+        <button type="submit" aria-label="Comenzar el Reto">¡Comenzar el Reto!</button>
+      </form>
+    </main>
+  </div>
 </body>
 </html>
-

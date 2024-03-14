@@ -1,97 +1,78 @@
-/* Restablecimiento de estilos */
-* {
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1919;
+    color: #d4af37;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f4f4f4; /* Un fondo más suave */
-}
-
-/* Encabezado */
-header {
-    background-color:#333;
-    color: #fff;
-    padding: 20px;
+.container {
     text-align: center;
-    border-bottom: 7px solid #333; /* Agrega un borde inferior para darle más profundidad */
-}
-
-h1 {
-    font-size: 2em; /* Usa em para hacerlo más responsivo */
-    margin-bottom: 10px; /* Agrega un margen inferior para darle más espacio al título */
-}
-
-img {
-    width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px; /* Agrega bordes redondeados a las imágenes */
-}
-
-/* Descripción del quiz */
-#descripcion {
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    background-color: #fff; /* Agrega un fondo blanco para resaltar el contenido */
-    margin: 20px; /* Agrega margen para separarlo del resto del contenido */
-    border-radius: 10px; /* Agrega bordes redondeados */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Agrega una sombra para darle profundidad */
-    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
 }
 
-h2 {
-    font-size: 1.5em; /* Usa em para hacerlo más responsivo */
-    margin-bottom: 10px;
+h1, h2 {
+    color: #b62020;
 }
 
 p {
-    line-height: 1.5;
-    margin-bottom: 10px;
+    color: #000000;
 }
 
-/* Botón para iniciar el quiz */
-#iniciar {
+/* Estilos para el Header */
+header {
+    display: flex;
+    justify-content: center; /* Centra los elementos en el header */
+    align-items: center;
+}
+header h1 {
     text-align: center;
-    margin: 20px auto;
+    position: relative;
+    right: -30px;
+}
+
+header img {
+    height: 35px;
+    width: auto;
+    position: relative;
+    top: -30px; /* Mueve el logo 5px hacia arriba */
+    right: -100px; /* Mueve el logo 5px a la derecha */
+}
+
+/* Estilos para el Main */
+main {
+    margin-top: 20px;
+}
+
+.nombre-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 button {
-    background-color: #041d2a;
-    color: #fff;
-    font-size: 3em; /* Usa em para hacerlo más responsivo */
-    padding: 10px 20px;
+    background-color: #b62020;
+    color: #ffffff;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px; /* Agrega bordes redondeados al botón */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Agrega una sombra para darle profundidad */
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px; /* Espacio adicional antes del botón */
 }
 
-/* Media queries */
-@media (max-width: 768px) {
-    /* Ajustar el tamaño de la imagen y el texto para dispositivos móviles */
-    img {
-      width: 150px;
-    }
-
-    h1 {
-      font-size: 1.5em; /* Usa em para hacerlo más responsivo */
-    }
-
-    h2 {
-      font-size: 1.2em; /* Usa em para hacerlo más responsivo */
-    }
-
-    p {
-      font-size: 0.875em; /* Usa em para hacerlo más responsivo */
-    }
-
-    button {
-      font-size: 0.875em; /* Usa em para hacerlo más responsivo */
-    }
+button:hover {
+    background-color: #d4af37;
 }

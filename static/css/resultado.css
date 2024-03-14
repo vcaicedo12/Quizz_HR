@@ -1,0 +1,52 @@
+/* Estilo general */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color:blanchedalmond;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  /* Sección de puntuación */
+  .puntuacion {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #puntuacion-total {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  #puntuacion-porcentaje {
+    font-style: italic;
+  }
+  
+  /* Sección de respuestas */
+  .respuestas {
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Botón de reinicio */
+  #reiniciar-boton {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #056f77fa;
+    cursor: pointer;
+  }

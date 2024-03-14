@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados del Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/resultado.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Resultados del Quiz</h1>
+  </header>
+
+  <main>
+    <section class="puntuacion">
+      <h2>Tu puntuación</h2>
+      <p id="puntuacion-total"></p>
+      <p id="puntuacion-porcentaje"></p>
+    </section>
+
+    <section class="respuestas">
+      <h2>Respuestas correctas</h2>
+      <ul id="respuestas-correctas"></ul>
+    </section>
+
+    <section class="respuestas-incorrectas">
+      <h2>Respuestas incorrectas</h2>
+      <ul id="respuestas-incorrectas"></ul>
+    </section>
+
+    <button id="reiniciar-boton">Reiniciar el quiz</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

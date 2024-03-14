@@ -3,7 +3,6 @@ fetch('static/json/questions.json')
   .then(response => response.json())
   .then(todasLasPreguntas => {
     // Ahora, todasLasPreguntas es tu archivo JSON como un objeto de JavaScript.
-
     // Seleccionar 10 preguntas aleatorias.
     const preguntas = [];
     for (let i = 0; i < 10; i++) {
@@ -11,11 +10,9 @@ fetch('static/json/questions.json')
       const preguntaAleatoria = todasLasPreguntas.splice(indiceAleatorio, 1)[0];
       preguntas.push(preguntaAleatoria);
     }
-
-
     // Variable para controlar la pregunta actual.
     let preguntaActual = 0;
-
+    let tiempoRestante = 30; // Tiempo inicial en segundos
     // Función para mostrar la pregunta actual.
     function mostrarPregunta() {
       // Borrar el contenido del div #quiz.
@@ -53,6 +50,31 @@ fetch('static/json/questions.json')
       });
       preguntaDiv.appendChild(respuestasForm);
 
+      // Crear un div para mostrar el tiempo restante.
+      const tiempoRestanteDiv = document.createElement('div');
+      tiempoRestanteDiv.className = 'contador';
+      tiempoRestanteDiv.textContent = tiempoRestante;
+      preguntaDiv.appendChild(tiempoRestanteDiv);
+
+      // Crear un temporizador para contar los 30 segundos.
+      const temporizador = setInterval(() => {
+        tiempoRestante--; // Disminuir el tiempo restante en 1 segundo
+        tiempoRestanteDiv.textContent = tiempoRestante; // Actualizar el contador en el HTML
+
+        // Si el tiempo se agota, detener el temporizador y mostrar la siguiente pregunta.
+        if (tiempoRestante === 0) {
+          clearInterval(temporizador);
+          // Mostrar la siguiente pregunta.
+          if (preguntaActual < preguntas.length - 1) {
+            preguntaActual++;
+            tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
+            mostrarPregunta();
+          } else {
+            // Si es la última pregunta, realizar alguna acción adicional.
+          }
+        }
+      }, 1000); // Actualizar el contador cada segundo
+
       // Crear un botón para ir a la siguiente pregunta.
       const siguienteBoton = document.createElement('button');
       siguienteBoton.textContent = 'Siguiente';
@@ -70,25 +92,27 @@ fetch('static/json/questions.json')
 
         // Si no se ha seleccionado ninguna opción, mostrar un mensaje de error y detener la ejecución.
         if (!seleccionado) {
-              // Crear un elemento para el mensaje de error.
-            const mensajeError = document.createElement('div');
-            mensajeError.className = 'error-respuesta';
-            mensajeError.textContent = 'Por favor, selecciona una respuesta antes de continuar.';
+          // Crear un elemento para el mensaje de error.
+          const mensajeError = document.createElement('div');
+          mensajeError.className = 'error-respuesta';
+          mensajeError.textContent = 'Por favor, selecciona una respuesta antes de continuar.';
 
-    // Agregar el mensaje de error al formulario.
-            respuestasForm.appendChild(mensajeError);
+          // Agregar el mensaje de error al formulario.
+          respuestasForm.appendChild(mensajeError);
 
-    // Mostrar el mensaje de error por un tiempo.
-           setTimeout(() => mensajeError.remove(), 3000);
-           return ;
+          // Mostrar el mensaje de error por un tiempo.
+          setTimeout(() => mensajeError.remove(), 3000);
+          return;
         }
-
+        // Detener el temporizador cuando se hace clic en el botón.
+        clearInterval(temporizador);
         // Si no es la última pregunta, mostrar la siguiente.
         if (preguntaActual < preguntas.length - 1) {
           preguntaActual++;
+          tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
           mostrarPregunta();
         } else {
-            
+          // Si es la última pregunta, realizar alguna acción adicional.
         }
       });
       preguntaDiv.appendChild(siguienteBoton);
@@ -96,8 +120,7 @@ fetch('static/json/questions.json')
       // Finalmente, agregar la pregunta al cuerpo del documento.
       document.getElementById('quiz').appendChild(preguntaDiv);
     }
-
     // Mostrar la primera pregunta.
     mostrarPregunta();
-    
   });
+
