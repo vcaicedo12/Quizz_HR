@@ -7,12 +7,18 @@ fetch('static/json/questions.json')
     let preguntaActual = 0;
     let tiempoRestante = 30; // Tiempo inicial en segundos
     let puntuacionTotal = 0; // Variable para almacenar la puntuación total.
+    let respuestasCorrectas = 0; // Contador de respuestas correctas
+    let respuestasIncorrectas = 0; // Contador de respuestas incorrectas
 
     function mostrarPregunta() {
       document.getElementById('quiz').innerHTML = '';
       if (preguntaActual >= todasLasPreguntas.length) {
         console.log('Puntuación Total:', puntuacionTotal);
+        console.log('Respuestas Correctas:', respuestasCorrectas);
+        console.log('Respuestas Incorrectas:', respuestasIncorrectas);
         localStorage.setItem('puntuacionTotal', puntuacionTotal); // Guardar la puntuación total en localStorage
+        localStorage.setItem('respuestasCorrectas', respuestasCorrectas); // Guardar el contador de respuestas correctas en localStorage
+        localStorage.setItem('respuestasIncorrectas', respuestasIncorrectas); // Guardar el contador de respuestas incorrectas en localStorage
         window.location.href = '/resultado';
         return; // Termina la ejecución de la función si ya no hay más preguntas
       }
@@ -64,6 +70,7 @@ fetch('static/json/questions.json')
             opcion.nextSibling.style.color = 'green';
             // Sumar puntos por respuesta correcta
             puntuacionTotal += tiempoRestante;
+            respuestasCorrectas++; // Incrementar el contador de respuestas correctas
           } else {
             opcion.nextSibling.style.color = 'red';
             // Mostrar la respuesta correcta
@@ -72,6 +79,7 @@ fetch('static/json/questions.json')
                 respuestasForm.children[index * 2 + 1].style.color = 'green';
               }
             });
+            respuestasIncorrectas++; // Incrementar el contador de respuestas incorrectas
           }
           // Desactivar todas las opciones después de seleccionar una
           opciones.forEach(op => {
@@ -102,6 +110,7 @@ function shuffleArray(array) {
   }
   return array;
 }
+
 
 
 

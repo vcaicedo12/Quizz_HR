@@ -12,24 +12,27 @@
   </header>
 
   <main>
-    <section class="puntuacion">
-      <h2>Tu puntuación</h2>
-      <p id="puntuacion-total"></p>
-    </section>
+    <div class="container">
+      <section class="puntuacion">
+        <h2>Tu puntuación</h2>
+        <p id="puntuacion-total"></p>
+      </section>
 
-    <section class="respuestas">
-      <h2>Respuestas correctas</h2>
-      <ul id="respuestas-correctas"></ul>
-    </section>
+      <section class="respuestas">
+        <h2>Respuestas correctas</h2>
+        <ul id="respuestas-correctas"></ul>
+      </section>
 
-    <section class="respuestas-incorrectas">
-      <h2>Respuestas incorrectas</h2>
-      <ul id="respuestas-incorrectas"></ul>
-    </section>
-
-    <button id="reiniciar-boton">Reiniciar el quiz</button>
+      <section class="respuestas-incorrectas">
+        <h2>Respuestas incorrectas</h2>
+        <ul id="respuestas-incorrectas"></ul>
+      </section>
+    </div>
+    <div class="centered">
+      <button id="reiniciar-boton">Reiniciar el quiz</button>
+    </div>
   </main>
 
-  <script src="{{ url_for('static', filename='jss/obtener_puntaje.js') }}"></script>
+  <script src="{{ url_for('static', filename='jss/obtener_datos.js') }}"></script>
 </body>
 </html>
