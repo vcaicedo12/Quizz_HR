@@ -1,142 +1,107 @@
-// Primero, debes cargar tu archivo JSON. Puedes hacerlo con fetch si estás en un entorno que lo soporte.
 fetch('static/json/questions.json')
   .then(response => response.json())
   .then(todasLasPreguntas => {
-    // Ahora, todasLasPreguntas es tu archivo JSON como un objeto de JavaScript.
-    // Seleccionar 10 preguntas aleatorias.
-    const preguntas = [];
-    for (let i = 0; i < 10; i++) {
-      const indiceAleatorio = Math.floor(Math.random() * todasLasPreguntas.length);
-      const preguntaAleatoria = todasLasPreguntas.splice(indiceAleatorio, 1)[0];
-      preguntas.push(preguntaAleatoria);
-    }
-    // Variable para controlar la pregunta actual.
+    // Seleccionar 10 preguntas aleatorias
+    todasLasPreguntas = shuffleArray(todasLasPreguntas).slice(0, 10);
+
     let preguntaActual = 0;
     let tiempoRestante = 30; // Tiempo inicial en segundos
     let puntuacionTotal = 0; // Variable para almacenar la puntuación total.
-    
-    // Función para mostrar la pregunta actual.
+
     function mostrarPregunta() {
-      // Borrar el contenido del div #quiz.
       document.getElementById('quiz').innerHTML = '';
-
-      // Obtener la pregunta actual del array.
-      const pregunta = preguntas[preguntaActual];
-
-      // Crear un div para la pregunta.
+      if (preguntaActual >= todasLasPreguntas.length) {
+        console.log('Puntuación Total:', puntuacionTotal);
+        localStorage.setItem('puntuacionTotal', puntuacionTotal); // Guardar la puntuación total en localStorage
+        window.location.href = '/resultado';
+        return; // Termina la ejecución de la función si ya no hay más preguntas
+      }
+      const pregunta = todasLasPreguntas[preguntaActual];
       const preguntaDiv = document.createElement('div');
       preguntaDiv.className = 'pregunta';
-
-      // Agregar el texto de la pregunta.
       const preguntaTexto = document.createElement('h2');
       preguntaTexto.textContent = pregunta.pregunta;
       preguntaDiv.appendChild(preguntaTexto);
-
-      // Crear un formulario para las respuestas.
       const respuestasForm = document.createElement('form');
+
       pregunta.respuestas.forEach((respuesta, j) => {
-        // Crear un input de radio para la respuesta.
         const respuestaInput = document.createElement('input');
         respuestaInput.type = 'radio';
         respuestaInput.name = `pregunta${preguntaActual}`;
         respuestaInput.id = `pregunta${preguntaActual}respuesta${j}`;
-
-        // Crear una etiqueta para la respuesta.
         const respuestaLabel = document.createElement('label');
         respuestaLabel.htmlFor = respuestaInput.id;
         respuestaLabel.textContent = respuesta;
-
-        // Agregar el input y la etiqueta al formulario.
         respuestasForm.appendChild(respuestaInput);
         respuestasForm.appendChild(respuestaLabel);
       });
-      preguntaDiv.appendChild(respuestasForm);
 
-      // Crear un div para mostrar el tiempo restante.
+      preguntaDiv.appendChild(respuestasForm);
       const tiempoRestanteDiv = document.createElement('div');
       tiempoRestanteDiv.className = 'contador';
       tiempoRestanteDiv.textContent = tiempoRestante;
       preguntaDiv.appendChild(tiempoRestanteDiv);
 
-      // Crear un temporizador para contar los 30 segundos.
       const temporizador = setInterval(() => {
-        tiempoRestante--; // Disminuir el tiempo restante en 1 segundo
-        tiempoRestanteDiv.textContent = tiempoRestante; // Actualizar el contador en el HTML
-
-        // Si el tiempo se agota, detener el temporizador y mostrar la siguiente pregunta.
+        tiempoRestante--;
+        tiempoRestanteDiv.textContent = tiempoRestante;
         if (tiempoRestante === 0) {
           clearInterval(temporizador);
-          // Mostrar la siguiente pregunta.
-          if (preguntaActual < preguntas.length - 1) {
+          // Pasar automáticamente a la siguiente pregunta después de 3 segundos
+          setTimeout(() => {
             preguntaActual++;
-            tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
+            tiempoRestante = 30;
             mostrarPregunta();
-          } else {
-            window.location.href = '/resultado';
-          }
+          }, 3000);
         }
-      }, 1000); // Actualizar el contador cada segundo
-
-      // Crear un botón para ir a la siguiente pregunta.
-      const siguienteBoton = document.createElement('button');
-      siguienteBoton.textContent = 'Siguiente';
-      siguienteBoton.addEventListener('click', () => {
-        // Obtener todas las opciones de respuesta.
-        const opciones = respuestasForm.querySelectorAll('input[type="radio"]');
-        let respuestaSeleccionadaCorrecta = false;
-        
-        // Verificar si se ha seleccionado alguna opción.
-        let seleccionado = false;
-        opciones.forEach(opcion => {
-          if (opcion.checked) {
-            seleccionado = true;
-            // Verificar si la respuesta seleccionada es correcta.
-            if (opcion.id === `pregunta${preguntaActual}respuesta${pregunta.respuestaCorrecta}`) {
-              respuestaSeleccionadaCorrecta = true;
-            }
+      }, 1000);
+      
+      const opciones = respuestasForm.querySelectorAll('input[type="radio"]');
+      opciones.forEach(opcion => {
+        opcion.addEventListener('change', () => {
+          const respuestaSeleccionada = opcion.nextSibling.textContent;
+          if (respuestaSeleccionada === pregunta.respuesta_correcta) {
+            opcion.nextSibling.style.color = 'green';
+            // Sumar puntos por respuesta correcta
+            puntuacionTotal += tiempoRestante;
+          } else {
+            opcion.nextSibling.style.color = 'red';
+            // Mostrar la respuesta correcta
+            pregunta.respuestas.forEach((respuesta, index) => {
+              if (respuesta === pregunta.respuesta_correcta) {
+                respuestasForm.children[index * 2 + 1].style.color = 'green';
+              }
+            });
+          }
+          // Desactivar todas las opciones después de seleccionar una
+          opciones.forEach(op => {
+            op.disabled = true;
+          });
+          // Si hay tiempo restante, detener el temporizador y pasar a la siguiente pregunta después de 3 segundos
+          if (tiempoRestante > 0) {
+            clearInterval(temporizador);
+            setTimeout(() => {
+              preguntaActual++;
+              tiempoRestante = 30;
+              mostrarPregunta();
+            }, 3000);
           }
         });
-
-        // Si no se ha seleccionado ninguna opción, mostrar un mensaje de error y detener la ejecución.
-        if (!seleccionado) {
-          // Crear un elemento para el mensaje de error.
-          const mensajeError = document.createElement('div');
-          mensajeError.className = 'error-respuesta';
-          mensajeError.textContent = 'Por favor, selecciona una respuesta antes de continuar.';
-
-          // Agregar el mensaje de error al formulario.
-          respuestasForm.appendChild(mensajeError);
-
-          // Mostrar el mensaje de error por un tiempo.
-          setTimeout(() => mensajeError.remove(), 3000);
-          return;
-        }
-        // Detener el temporizador cuando se hace clic en el botón.
-        clearInterval(temporizador);
-        // Calcular los puntos para esta pregunta según el temporizador.
-        let puntos = 0;
-        if (tiempoRestante > 0 && respuestaSeleccionadaCorrecta) {
-          puntos = tiempoRestante; // Asignar los segundos restantes como puntos.
-        }
-        // Agregar los puntos al total.
-        puntuacionTotal += puntos;
-        // Si no es la última pregunta, mostrar la siguiente.
-        if (preguntaActual < preguntas.length - 1) {
-          preguntaActual++;
-          tiempoRestante = 30; // Reiniciar el tiempo restante para la siguiente pregunta
-          mostrarPregunta();
-        } else {
-          // Realizar alguna acción adicional cuando se haya completado el cuestionario.
-          console.log('Puntuación Total:', puntuacionTotal); // Imprimir la puntuación total
-          window.location.href = '/resultado'; // Redirigir a la página de resultados
-        }
       });
-      preguntaDiv.appendChild(siguienteBoton);
 
-      // Finalmente, agregar la pregunta al cuerpo del documento.
       document.getElementById('quiz').appendChild(preguntaDiv);
     }
-    // Mostrar la primera pregunta.
     mostrarPregunta();
   });
+
+// Función para mezclar aleatoriamente un array (Algoritmo de Fisher-Yates)
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+
 

@@ -15,7 +15,6 @@
     <section class="puntuacion">
       <h2>Tu puntuación</h2>
       <p id="puntuacion-total"></p>
-      <p id="puntuacion-porcentaje"></p>
     </section>
 
     <section class="respuestas">
@@ -31,6 +30,6 @@
     <button id="reiniciar-boton">Reiniciar el quiz</button>
   </main>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='jss/obtener_puntaje.js') }}"></script>
 </body>
 </html>
