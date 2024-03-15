@@ -1,147 +1,151 @@
 /* Restablecimiento de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Angkor';
-    background-color: #f4f4f4;
-    color: #3c2f2f;
+  font-family: 'Play';
+  background-color: #f4f4f4;
+  color: #3c2f2f;
 }
-.angkor-regular {
-    font-family: "Angkor", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+
+.play-regular {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.play-bold {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 header {
-    background-color: #3c2f2f;
-    color: #d4af37;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid #d4af37;
+  background-color: #3c2f2f;
+  color: #d4af37;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 3px solid #d4af37;
 }
 
 h1 {
-    font-size: 2.5em; /* Aumentar el tamaño de la letra */
-    margin-bottom: 10px;
+  font-size: 2.5em; /* Aumentar el tamaño de la letra */
+  margin-bottom: 10px;
 }
 
 #quiz {
-    width: 100%; /* Ocupar toda la pantalla */
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  width: 100%; /* Ocupar toda la pantalla */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  background-image: url('ruta_de_la_imagen.jpg'); /* Agregar la ruta de la imagen de fondo */
+  background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
+  background-position: center; /* Centrar la imagen de fondo */
 }
 
 .pregunta {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar las preguntas y las opciones */
-    width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar las preguntas y las opciones */
+  width: 100%;
 }
 
 .pregunta h2 {
-    font-size: 2em; /* Aumentar el tamaño de la letra */
-    margin-bottom: 10px;
+  font-size: 2em; /* Aumentar el tamaño de la letra */
+  margin-bottom: 10px;
 }
 
 .pregunta form {
-    margin-top: 10px;
-    width: 100%; /* Ocupar toda la pantalla */
+  margin-top: 10px;
+  width: 100%; /* Ocupar toda la pantalla */
 }
 
 label {
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.5em; /* Aumentar el tamaño de la letra */
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border: 1px solid #d4af37;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5em; /* Aumentar el tamaño de la letra */
 }
 
 input[type="radio"] {
-    display: none; /* Ocultar el círculo de selección */
+  display: none; /* Ocultar el círculo de selección */
 }
 
 input[type="radio"]:checked + label {
-    background-color: #d4af37;
-    color: #fff;
-    font-weight: bold;
+  background-color: #d4af37;
+  color: #fff;
+  font-weight: bold;
 }
 
 button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.5em; /* Aumentar el tamaño de la letra */
-    background-color: #d4af37;
-    color: #3c2f2f;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    margin-top: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5em; /* Aumentar el tamaño de la letra */
+  background-color: #d4af37;
+  color: #3c2f2f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
-#watermark-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-  }
-  
-#watermark-container img {
-    width: 20%;
-    display: block;
-    margin: auto; /* Center image horizontally within container */
-    position: absolute; /* Position image absolutely within container */
-    top: 50%; /* Center image vertically within container */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Translate image to center it within container */
-  }
-  
+/* Agrega este CSS para el footer */
+#footer {
+  width: 100%; /* Ocupa toda la pantalla */
+  height: 200px; /* Altura deseada para el footer */
+  background-color: #3c2f2f; /* Color de fondo para el footer */
+}
+
 
 @media (max-width: 768px) {
-    h1, .pregunta h2 {
-        font-size: 1.5em;
-    }
+  h1, .pregunta h2 {
+      font-size: 1.5em;
+  }
 
-    button {
-        font-size: 1.2em;
-    }
+  button {
+      font-size: 1.2em;
+  }
 }
+
 .error-respuesta {
-    color: #d43737; /* Rojo */
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #d43737;
-    border-radius: 5px;
-    margin-top: 10px;
-    animation: error-aparecer 0.5s ease-in-out;
-  }
-  .contador {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #d43737; /* Rojo */
-    margin-top: 10px;
-  }
-  
-  
-  @keyframes error-aparecer {
-    from {
+  color: #d43737; /* Rojo */
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #d43737;
+  border-radius: 5px;
+  margin-top: 10px;
+  animation: error-aparecer 0.5s ease-in-out;
+}
+
+.contador-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.contador-numero {
+  font-size: 20em;
+  font-weight: bold;
+  color:#d43737; /* Rojo */
+}
+
+@keyframes error-aparecer {
+  from {
       opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
   }
-  
+
+  to {
+      opacity: 1;
+  }
+}

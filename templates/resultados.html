@@ -29,10 +29,14 @@
       </section>
     </div>
     <div class="centered">
-      <button id="reiniciar-boton">Reiniciar el quiz</button>
+      <form action="/" method="get"> <!-- Modificado el action del formulario -->
+        <button id="reiniciar-boton">Reiniciar el quiz</button>
+      </form>
     </div>
   </main>
 
   <script src="{{ url_for('static', filename='jss/obtener_datos.js') }}"></script>
 </body>
 </html>
+
+

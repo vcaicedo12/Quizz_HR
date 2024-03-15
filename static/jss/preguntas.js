@@ -43,14 +43,20 @@ fetch('static/json/questions.json')
       });
 
       preguntaDiv.appendChild(respuestasForm);
-      const tiempoRestanteDiv = document.createElement('div');
-      tiempoRestanteDiv.className = 'contador';
-      tiempoRestanteDiv.textContent = tiempoRestante;
-      preguntaDiv.appendChild(tiempoRestanteDiv);
+
+      const contadorDiv = document.createElement('div');
+      contadorDiv.className = 'contador-container';
+
+      const contadorNumero = document.createElement('div');
+      contadorNumero.className = 'contador-numero';
+      contadorNumero.textContent = tiempoRestante;
+      contadorDiv.appendChild(contadorNumero);
+
+      preguntaDiv.appendChild(contadorDiv);
 
       const temporizador = setInterval(() => {
         tiempoRestante--;
-        tiempoRestanteDiv.textContent = tiempoRestante;
+        contadorNumero.textContent = tiempoRestante;
         if (tiempoRestante === 0) {
           clearInterval(temporizador);
           // Pasar automáticamente a la siguiente pregunta después de 3 segundos
@@ -110,6 +116,8 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+
 
 
 
