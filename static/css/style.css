@@ -1,80 +1,85 @@
-/* Estilos Generales */
+/* Estilo general */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1919;
-    color: #d4af37;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
-  }
-  
-  h1, h2 {
-    color: #b62020;
-  }
-  
-  p {
-    color: #000000;
-  }
-  
-  /* Estilos para el Header */
-  header {
-    display: flex;
-    justify-content: center; /* Centra los elementos en el header */
-    align-items: center;
-  }
-  
-  header h1 {
-    text-align: center;
-    position: relative;
-    right: -30px;
-  }
-  
-  header img {
-    height: 35px;
-    width: auto; /* Allow image to adjust width proportionally */
-    position: relative;
-    top: -30px; /* Mueve el logo 5px hacia arriba */
-    right: -100px; /* Mueve el logo 5px a la derecha */
-  }
-  
-  /* Estilos para el Main */
-  main {
-    margin-top: 20px;
-  }
-  
-  .nombre-boton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  button {
-    background-color: #b62020;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 15px; /* Espacio adicional antes del botón */
-  }
-  
-  button:hover {
-    background-color: #d4af37;
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1d1d1d; /* Color de fondo oscuro */
+  color: #fff; /* Color de texto blanco */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo del encabezado */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Estilo del logo de Harry Potter */
+header img {
+  width: 200px;
+  height: auto;
+}
+
+/* Estilo de la sección de descripción */
+#descripcion {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#descripcion h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#descripcion p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Estilo del formulario */
+form {
+  text-align: center;
+}
+
+.nombre-boton {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 2px solid #ffc107; /* Color de borde dorado */
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffc107; /* Color de fondo dorado */
+  color: #1d1d1d; /* Color de texto oscuro */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd42a; /* Cambio de color al pasar el mouse */
+}
+
   

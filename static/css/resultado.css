@@ -3,7 +3,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background-color: #1d1d1d; /* Color de fondo oscuro */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,12 +13,12 @@ body {
 
 h1 {
   font-size: 5.5em;
-  color: #333;
+  color: #d3a625; /* Color dorado representativo de la magia */
   margin-top: 20px;
 }
 
 h2 {
-  color: #333;
+  color: #d3a625; /* Color dorado para los títulos */
 }
 
 /* Contenedor para las secciones de puntuación y respuestas */
@@ -33,7 +33,7 @@ h2 {
 /* Tarjetas de puntuación, respuestas correctas e incorrectas */
 .puntuacion, .respuestas, .respuestas-incorrectas {
   flex: 0 0 calc(30% - 20px);
-  border: 2px solid #056f77fa;
+  border: 2px solid #d3a625; /* Borde dorado */
   border-radius: 10px;
   padding: 20px;
   background-color: #fff;
@@ -44,11 +44,6 @@ h2 {
   font-size: 1.5em;
 }
 
-.respuestas-incorrectas {
-  display: flex;
-  flex-direction: column;
-}
-
 /* Botón de reinicio */
 #reiniciar-boton {
   padding: 20px 40px;
@@ -56,14 +51,14 @@ h2 {
   font-weight: bold;
   border: none;
   border-radius: 5px;
-  background-color: #056f77fa;
-  color: #fff;
+  background-color: #d3a625; /* Fondo dorado */
+  color: #1d1d1d; /* Texto oscuro para resaltar */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #reiniciar-boton:hover {
-  background-color: #056f77;
+  background-color: #ffd42a; /* Color dorado más claro al pasar el mouse */
 }
 
 /* Estilos adicionales */
@@ -84,4 +79,3 @@ li {
   align-items: center;
   margin-top: 20px;
 }
-
