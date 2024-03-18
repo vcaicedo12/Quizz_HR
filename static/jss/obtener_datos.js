@@ -32,27 +32,36 @@ document.addEventListener('DOMContentLoaded', function() {
     respuestasIncorrectasElement.textContent = 'No se encontraron respuestas incorrectas';
   }
 
-  // Función para enviar datos al servidor
-  function enviarDatosServidor(puntuacionTotal, nombre) {
-    // Enviar la puntuación total y el nombre al servidor
-    fetch('/guardar', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ puntuacion_total: puntuacionTotal, nombre: nombre })
-    })
-    .then(response => {
-      if (response.ok) {
-        console.log('Datos enviados al servidor correctamente.');
-      } else {
-        console.error('Error al enviar los datos al servidor:', response.statusText);
-      }
-    })
-    .catch(error => {
-      console.error('Error al enviar los datos al servidor:', error);
-    });
-  }
+ // Función para enviar datos al servidor
+function enviarDatosServidor(puntuacionTotal, nombre) {
+  // Enviar la puntuación total y el nombre al servidor
+  fetch('/guardar', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ puntuacion_total: puntuacionTotal, nombre: nombre })
+  })
+  .then(response => response.json())  // Añadido para obtener la respuesta JSON
+  .then(data => {  // Añadido para manejar la respuesta JSON
+    if (data.success) {
+      console.log('Datos enviados al servidor correctamente.');
+      // Mostrar el mensaje
+      const mensajeElement = document.getElementById('mensaje');
+      mensajeElement.textContent = data.message;  // Modificado para mostrar el mensaje de la respuesta
+      mensajeElement.style.display = 'block';
+      // Ocultar el mensaje después de 3 segundos
+      setTimeout(function() {
+        mensajeElement.style.display = 'none';
+      }, 3000);
+    } else {
+      console.error('Error al enviar los datos al servidor:', data.error);  // Modificado para mostrar el error de la respuesta
+    }
+  })
+  .catch(error => {
+    console.error('Error al enviar los datos al servidor:', error);
+  });
+}
 
   // Event listener para enviar el nombre a la ruta /guardar
   const form = document.getElementById('guardar-datos-form');
@@ -69,5 +78,5 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Por favor, ingresa tu nombre antes de enviar el formulario.');
     }
   });
-}); 
+});
 

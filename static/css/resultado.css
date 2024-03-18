@@ -99,7 +99,8 @@ li {
   margin-top: 2.5px;
 }
 
-#guardar-datos-boton {
+/* Estilo para el botón de guardar */
+#guardar-datos-form button[type="submit"] {
   padding: 15px 30px;
   font-size: 1.2em;
   font-weight: bold;
@@ -109,4 +110,21 @@ li {
   color: #fff; /* Texto blanco */
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+#guardar-datos-form button[type="submit"]:hover {
+  background-color: #333; /* Color oscuro más claro al pasar el mouse */
+}
+/* Estilo para el mensaje de éxito */
+#mensaje {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #1d1d1d;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

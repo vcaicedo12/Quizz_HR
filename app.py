@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash,jsonify
 import sqlite3
 from flask_sqlalchemy import SQLAlchemy
 
@@ -38,22 +38,24 @@ def res():
 
 @app.route('/guardar', methods=['POST'])
 def guardar():
-  if request.method == 'POST':
-    data = request.get_json()
-    puntuacion_total = data.get('puntuacion_total')
-    nombre = data.get('nombre')
+    if request.method == 'POST':
+        data = request.get_json()
+        puntuacion_total = data.get('puntuacion_total')
+        nombre = data.get('nombre')
 
-    # Verificar si la puntuación total y el nombre son válidos
-    if puntuacion_total is not None and nombre is not None:
-      # Guardar la puntuación total y el nombre en la base de datos
-      nuevo_jugador = Rn(name=nombre, score=puntuacion_total)
-      db.session.add(nuevo_jugador)
-      db.session.commit()
-      return 'Datos guardados correctamente en la base de datos.', 200
+        # Verificar si la puntuación total y el nombre son válidos
+        if puntuacion_total is not None and nombre is not None:
+            # Guardar la puntuación total y el nombre en la base de datos
+            nuevo_jugador = Rn(name=nombre, score=puntuacion_total)
+            db.session.add(nuevo_jugador)
+            db.session.commit()
+            # Devolver una respuesta JSON con un indicador de éxito y un mensaje
+            return jsonify({'success': True, 'message': 'Datos guardados con éxito'}), 200
+        else:
+            # Devolver una respuesta JSON con un indicador de error
+            return jsonify({'error': 'No se recibió una puntuación total o un nombre válido.'}), 400
     else:
-      return 'Error: No se recibió una puntuación total o un nombre válido.', 400
-  else:
-    return 'Error: Método de solicitud no permitido.', 405
+        return 'Error: Método de solicitud no permitido.', 405
 
 
 
