@@ -8,7 +8,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Utiliza como mínimo toda la altura de la ventana */
-  background-image: url('static/img/fondo_vold.png'); /* Ruta de la imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el cuerpo */
   background-position: center; /* Centra la imagen */
 }
@@ -57,6 +56,7 @@ h2 {
   color: #1d1d1d; /* Texto oscuro para resaltar */
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Espacio debajo del botón */
 }
 
 #reiniciar-boton:hover {
@@ -80,4 +80,33 @@ li {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+/* Estilo para el formulario de ingreso de nombre y botón de guardar */
+.form-container {
+  margin-top: 30px;
+  text-align: center;
+  display: flex; /* Añadido para alinear los elementos en línea */
+  justify-content: center; /* Añadido para centrar los elementos en línea */
+}
+
+#nombre {
+  padding: 10px;
+  margin-right: 10px; /* Añadido para agregar espacio a la derecha del campo de entrada */
+  border: 2px solid #d3a625; /* Borde dorado */
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 2.5px;
+}
+
+#guardar-datos-boton {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #1d1d1d; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }

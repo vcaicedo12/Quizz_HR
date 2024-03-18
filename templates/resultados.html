@@ -28,15 +28,28 @@
         <ul id="respuestas-incorrectas"></ul>
       </section>
     </div>
+
+    <!-- Formulario para guardar los datos -->
+    <div class="form-container">
+      <form id="guardar-datos-form" action="/guardar" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="submit">Guardar Datos</button>
+      </form>
+    </div>
+
     <div class="centered">
       <form action="/" method="get"> <!-- Modificado el action del formulario -->
         <button id="reiniciar-boton">Reiniciar el quiz</button>
       </form>
     </div>
+    <div id="mensaje" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: #4CAF50; color: white;"></div>
+
   </main>
 
   <script src="{{ url_for('static', filename='jss/obtener_datos.js') }}"></script>
+  
+
 </body>
 </html>
-
 
