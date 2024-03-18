@@ -1,43 +1,92 @@
+/* Estilo general */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ddd;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #905;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2em;
-    font-weight: bold;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    border: 2px solid #905;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  th,
-  td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #905;
-  }
-  
-  th {
-    background-color: #ccc;
-    font-weight: bold;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #eee;
-  }
-  
+  font-family: 'Kode Mono', serif; /* Fuente clásica para un look mágico */
+  background-color:#424242; /* Fondo oscuro suavizado */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #9c2525; /* Color rojo oscuro suavizado de Gryffindor */
+  color: #f0c674; /* Color dorado suavizado de Gryffindor */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  border: 2px solid #f0c674; /* Borde dorado suavizado */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #f0c674; /* Borde dorado suavizado */
+}
+
+th {
+  background-color: #9c2525; /* Fondo rojo oscuro suavizado de Gryffindor */
+  color: #f0c674; /* Texto dorado suavizado de Gryffindor */
+  font-weight: bold;
+}
+
+/* Filas pares */
+tr:nth-child(even) {
+  background-color: #3a3a3a; /* Fondo oscuro suavizado para las filas pares */
+}
+
+/* Fila actual (jugador actual) */
+tr.actual {
+  background-color: #d3a625; /* Fondo dorado intenso */
+}
+
+/* Puntuación y nombre del jugador */
+.puntuacion,
+.nombre-jugador {
+  background-color: #f0c674; /* Fondo dorado para resaltar */
+  color: #2a2a2a; /* Texto oscuro para mayor contraste */
+  font-weight: bold; /* Aumenta el peso de la fuente */
+  font-size: 1.4em; /* Aumenta el tamaño de fuente */
+}
+
+/* Ajustes adicionales */
+th {
+  padding: 15px; /* Aumenta el espacio entre la información */
+  border-width: 3px; /* Aumenta el grosor del borde */
+}
+
+td {
+  padding: 10px; /* Ajusta el espacio entre la información */
+}
+
+/* Estilo del botón Volver al Inicio */
+.volver {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.volver a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #9c2525; /* Fondo rojo oscuro suavizado de Gryffindor */
+  color: #f0c674; /* Texto dorado suavizado de Gryffindor */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.volver a:hover {
+  background-color: #f0c674; /* Fondo dorado suavizado al pasar el mouse */
+  color: #9c2525; /* Texto rojo oscuro suavizado al pasar el mouse */
+}

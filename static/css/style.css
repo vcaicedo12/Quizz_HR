@@ -82,4 +82,27 @@ button:hover {
   background-color: #ffd42a; /* Cambio de color al pasar el mouse */
 }
 
+/* Estilo del botón Ver Ranking */
+.boton-ver-ranking {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.boton-ver-ranking button {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Color de fondo del botón Ver Ranking */
+  color: #fff; /* Color de texto blanco */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
   

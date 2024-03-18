@@ -3,13 +3,11 @@ fetch('static/json/questions.json')
   .then(todasLasPreguntas => {
     // Seleccionar 10 preguntas aleatorias
     todasLasPreguntas = shuffleArray(todasLasPreguntas).slice(0, 10);
-
     let preguntaActual = 0;
     let tiempoRestante = 30; // Tiempo inicial en segundos
     let puntuacionTotal = 0; // Variable para almacenar la puntuación total.
     let respuestasCorrectas = 0; // Contador de respuestas correctas
     let respuestasIncorrectas = 0; // Contador de respuestas incorrectas
-
     function mostrarPregunta() {
       document.getElementById('quiz').innerHTML = '';
       if (preguntaActual >= todasLasPreguntas.length) {
@@ -67,7 +65,6 @@ fetch('static/json/questions.json')
           }, 3000);
         }
       }, 1000);
-      
       const opciones = respuestasForm.querySelectorAll('input[type="radio"]');
       opciones.forEach(opcion => {
         opcion.addEventListener('change', () => {
@@ -116,7 +113,6 @@ function shuffleArray(array) {
   }
   return array;
 }
-
 
 
 
